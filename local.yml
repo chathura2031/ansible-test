@@ -1,5 +1,68 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: Install htop
-    apt: name=htop
+    - name: Update and upgrade apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400
+
+    - name: Install udisks2 (provides udisksctl)
+      apt:
+        name: udisks2
+        state: latest
+
+    - name: Install vim (text editor)
+      apt:
+        name: vim
+        state: latest
+
+    - name: Install xorg (display server)
+      apt:
+        name: xorg
+        state: latest
+
+    - name: Install openbox (window manager)
+      apt:
+        name: openbox
+        state: latest
+
+    # - name: Install obconf (openbox configuration utility)
+    #   apt:
+    #     name: obconf
+    #     state: latest
+
+    - name: Install tint2 (panel manager)
+      apt:
+        name: tint2
+        state: latest
+
+    - name: Install xcompmgr (compositor)
+      apt:
+        name: xcompmgr
+        state: latest
+
+    - name: Install nitrogen (desktop background browser/setter)
+      apt:
+        name: nitrogen
+        state: latest
+
+    - name: Install dunst (notification daemon)
+      apt:
+        name: dunst
+        state: latest
+
+    - name: Install yakuake (terminal emulator)
+      apt:
+        name: yakuake
+        state: latest
+
+    - name: Install xbacklight (brightness controller)
+      apt:
+        name: xbacklight
+        state: latest
+
+    - name: Install thunar (file manager)
+      apt:
+        name: thunar
+        state: latest
