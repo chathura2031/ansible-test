@@ -72,3 +72,14 @@
       apt:
         name: thunar
         state: latest
+
+    - name: Setup openbox
+      become: true
+      copy:
+        src: ./openbox
+        dest: /etc/xdg/
+
+    - name: Setup vim
+      copy:
+        src: ./vimrc
+        dest: /etc/vim/
