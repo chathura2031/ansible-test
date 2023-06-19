@@ -28,10 +28,10 @@
         name: openbox
         state: latest
 
-    # - name: Install obconf (openbox configuration utility)
-    #   apt:
-    #     name: obconf
-    #     state: latest
+    - name: Install obconf (openbox configuration utility)
+      apt:
+        name: obconf
+        state: latest
 
     - name: Install tint2 (panel manager)
       apt:
@@ -48,7 +48,12 @@
         name: nitrogen
         state: latest
 
-    - name: Install dunst (notification daemon)
+    - name: Install libnotify (notification library)
+      apt:
+        name: dunst
+        state: latest
+
+    - name: Install dunst (notification daemon/server)
       apt:
         name: dunst
         state: latest
