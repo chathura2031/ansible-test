@@ -74,7 +74,6 @@
         state: latest
 
     - name: Setup openbox
-      become: true
       copy:
         src: ./openbox
         dest: /etc/xdg/
