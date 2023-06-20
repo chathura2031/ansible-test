@@ -106,9 +106,18 @@
         name: thunar
         state: latest
 
-    - name: Install jgmenu (application launcher)
+    - name: Install jgmenu (app menu)
       apt:
         name: jgmenu
+        state: latest
+
+    - name: Add repository for ulauncher
+      apt_repository:
+        repo: ppa:agornostal/ulauncher
+
+    - name: Install ulauncher (app launcher)
+      apt:
+        name: ulauncher
         state: latest
 
     - name: Install flatpak (cross-distro package manager)
