@@ -127,6 +127,15 @@
         name: com.github.Eloston.UngoogledChromium
         state: present
 
+    - name: Download vscode package
+      get_url:
+        url: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+        dest: /tmp/code.deb
+
+    - name: Install vscode
+      apt:
+        deb: /tmp/code.deb
+
     - name: Install mpv (video player)
       apt:
         name: mpv
