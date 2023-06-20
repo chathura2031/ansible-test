@@ -1,4 +1,5 @@
 # https://opensource.com/article/18/3/manage-workstation-ansible
+# ansible-pull -e "ansible_become_password=[SUDO_PASSWORD]" -U [REPO_URL]
 - hosts: localhost
   become: true
   tasks:
@@ -71,6 +72,11 @@
     - name: Install thunar (file manager)
       apt:
         name: thunar
+        state: latest
+
+    - name: Install flatpack (cross-distro package manager)
+      apt:
+        name: flatpack
         state: latest
 
     - name: Setup openbox
