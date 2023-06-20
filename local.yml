@@ -232,4 +232,4 @@
 
     - name: Install vim in vscode
       shell:
-        cmd: code --install-extension vscodevim
+        cmd: code --install-extension vscodevim.vim
