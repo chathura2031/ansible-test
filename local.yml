@@ -1,5 +1,6 @@
 # https://opensource.com/article/18/3/manage-workstation-ansible
 # ansible-pull -e "ansible_become_password=[SUDO_PASSWORD]" -U https://github.com/chathura2031/ansible-test.git
+# TODO: Add ~/.config/jgmenu/jgmenurc
 - name: Install packages
   hosts: localhost
   become: true
@@ -179,33 +180,56 @@
       community.general.timezone:
         name: Australia/Melbourne
 
-    - name: Setup openbox
+    - name: Configure openbox
       become: true
       copy:
         src: ./openbox
         dest: /etc/xdg/
 
-    - name: Setup xbacklight
+    - name: Configure xbacklight
       become: true
       copy:
         src: ./xorg.conf
         dest: /etc/X11/
 
-    - name: Setup vim
+    - name: Configure vim
       become: true
       copy:
         src: ./vimrc
         dest: /etc/vim/
 
-    - name: Setup tint2
+    - name: Configure tint2
       copy:
         src: ./tint2rc
         dest: ~/.config/tint2/
 
-    - name: Setup start menu
+    - name: Configure jgmenu
+      copy:
+        src: ./jgmenurc
+        dest: ~/.config/jgmenu/
+
+    - name: Transfer wallpapers
+      copy:
+        src: ./Wallpapers
+        dest: ~/
+
+    - name: Configure nitrogen
+      copy:
+        src: ./nitrogen
+        dest: ~/.config/
+
+    - name: Configure start menu
       become: true
       copy:
         src: ./start_menu
         dest: /usr/bin/
         mode: preserve
 
+    - name: Configure vscode
+      copy:
+        src: ./settings.json
+        dest: ~/.config/Code/User/settings.json
+
+    - name: Install vim in vscode
+      shell:
+        cmd: code --install-extension vscodevim
