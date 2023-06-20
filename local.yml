@@ -147,10 +147,10 @@
         name: libreoffice
         state: latest
 
-    - name: Install discord
-      apt:
-        name: discord
-        state: latest
+          #     - name: Install discord
+          #       apt:
+          #         name: discord
+          #         state: latest
 
     - name: Install gimp
       apt:
