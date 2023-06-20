@@ -50,9 +50,19 @@
         name: nitrogen
         state: latest
 
+    - name: Install alsa-base (API for sound card device drivers)
+      apt:
+        name: alsa-base
+        state: latest
+
+    - name: Install pavucontrol (volume control tool)
+      apt:
+        name: pavucontrol
+        state: latest
+
     - name: Install libnotify (notification library)
       apt:
-        name: dunst
+        name: libnotify
         state: latest
 
     - name: Install dunst (notification daemon/server)
@@ -60,19 +70,44 @@
         name: dunst
         state: latest
 
-    - name: Install yakuake (terminal emulator)
-      apt:
-        name: yakuake
-        state: latest
-
     - name: Install xbacklight (brightness controller)
       apt:
         name: xbacklight
         state: latest
 
+    - name: Install git
+      apt:
+        name: git
+        state: latest
+
+    - name: Install xclip
+      apt:
+        name: xclip
+        state: latest
+
+    - name: Install zip
+      apt:
+        name: zip
+        state: latest
+
+    - name: Install unzip
+      apt:
+        name: unzip
+        state: latest
+
+    - name: Install yakuake (terminal emulator)
+      apt:
+        name: yakuake
+        state: latest
+
     - name: Install thunar (file manager)
       apt:
         name: thunar
+        state: latest
+
+    - name: Install jgmenu (application launcher)
+      apt:
+        name: jgmenu
         state: latest
 
     - name: Install flatpak (cross-distro package manager)
@@ -92,14 +127,59 @@
         name: com.github.Eloston.UngoogledChromium
         state: present
 
+    - name: Install mpv (video player)
+      apt:
+        name: mpv
+        state: latest
+
+    - name: Install qalculate
+      apt:
+        name: qalculate-gtk
+        state: latest
+
+    - name: Install thunderbird
+      apt:
+        name: thunderbird
+        state: latest
+
+    - name: Install libreoffice
+      apt:
+        name: libreoffice
+        state: latest
+
+    - name: Install discord
+      apt:
+        name: discord
+        state: latest
+
+    - name: Install gimp
+      apt:
+        name: gimp
+        state: latest
+
+    - name: Install podman
+      apt:
+        name: podman
+        state: latest
+
 - name: Configure packages
   hosts: localhost
   tasks:
+    - name: Set the timezone
+      community.general.timezone:
+        name: Australia/Melbourne
+
     - name: Setup openbox
       become: true
       copy:
         src: ./openbox
         dest: /etc/xdg/
+
+    - name: Setup xbacklight
+      become: true
+      copy:
+        src: ./xorg.conf
+        dest: /etc/X11/
 
     - name: Setup vim
       become: true
@@ -109,10 +189,13 @@
 
     - name: Setup tint2
       copy:
-        src: tint2rc
+        src: ./tint2rc
         dest: ~/.config/tint2/
 
-    - name: Setup yakuake
+    - name: Setup start menu
+      become: true
       copy:
-        src: yakuakerc
-        dest: ~/.config/
+        src: ./start_menu
+        dest: /usr/bin/
+        mode: preserve
+
