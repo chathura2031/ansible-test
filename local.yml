@@ -1,5 +1,5 @@
 # https://opensource.com/article/18/3/manage-workstation-ansible
-# ansible-pull -e "ansible_become_password=[SUDO_PASSWORD]" -U [REPO_URL]
+# ansible-pull -e "ansible_become_password=[SUDO_PASSWORD]" -U https://github.com/chathura2031/ansible-test.git
 - hosts: localhost
   become: true
   tasks:
@@ -74,7 +74,7 @@
         name: thunar
         state: latest
 
-    - name: Install flatpack (cross-distro package manager)
+    - name: Install flatpak (cross-distro package manager)
       apt:
         name: flatpack
         state: latest
@@ -88,3 +88,13 @@
       copy:
         src: ./vimrc
         dest: /etc/vim/
+
+    - name: Setup tint2
+      copy:
+        src: tint2rc
+        dest: ~/.config/tint2/
+
+    - name: Setup yakuake
+      copy:
+        src: yakuakerc
+        dest: ~/.config/
