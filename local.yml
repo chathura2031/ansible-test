@@ -166,6 +166,7 @@
   hosts: localhost
   tasks:
     - name: Set the timezone
+      become: true
       community.general.timezone:
         name: Australia/Melbourne
 
