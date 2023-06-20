@@ -79,6 +79,18 @@
         name: flatpak
         state: latest
 
+    - name: Add flathub repository
+      flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+        method: system
+
+    - name: Install chromium (browser)
+      flatpak:
+        name: com.github.Eloston.UngoogledChromium
+        state: present
+
     - name: Setup openbox
       copy:
         src: ./openbox
