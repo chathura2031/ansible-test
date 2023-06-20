@@ -76,7 +76,7 @@
 
     - name: Install flatpak (cross-distro package manager)
       apt:
-        name: flatpack
+        name: flatpak
         state: latest
 
     - name: Setup openbox
