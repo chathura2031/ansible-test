@@ -92,12 +92,17 @@
         name: com.github.Eloston.UngoogledChromium
         state: present
 
+- name: Configure packages
+  hosts: localhost
+  tasks:
     - name: Setup openbox
+      become: true
       copy:
         src: ./openbox
         dest: /etc/xdg/
 
     - name: Setup vim
+      become: true
       copy:
         src: ./vimrc
         dest: /etc/vim/
