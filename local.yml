@@ -1,6 +1,7 @@
 # https://opensource.com/article/18/3/manage-workstation-ansible
 # ansible-pull -e "ansible_become_password=[SUDO_PASSWORD]" -U https://github.com/chathura2031/ansible-test.git
-- hosts: localhost
+- name: Install packages
+  hosts: localhost
   become: true
   tasks:
     - name: Update and upgrade apt packages
