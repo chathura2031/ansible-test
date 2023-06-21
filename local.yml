@@ -1,6 +1,5 @@
 # https://opensource.com/article/18/3/manage-workstation-ansible
 # ansible-pull -e "ansible_become_password=[SUDO_PASSWORD]" -U https://github.com/chathura2031/ansible-test.git
-# TODO: Add ~/.config/jgmenu/jgmenurc
 - name: Install packages
   hosts: localhost
   become: true
@@ -166,10 +165,10 @@
         name: libreoffice
         state: latest
 
-          #     - name: Install discord
-          #       apt:
-          #         name: discord
-          #         state: latest
+    - name: Install discord
+      flatpak:
+        name: com.discordapp.Discord
+        state: present
 
     - name: Install gimp
       apt:
