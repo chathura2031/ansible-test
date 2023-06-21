@@ -217,6 +217,11 @@
         src: ./jgmenurc
         dest: ~/.config/jgmenu/
 
+    - name: Configure ulauncher
+      copy:
+        src: ./ulauncher
+        dest: ~/.config/
+
     - name: Transfer wallpapers
       copy:
         src: ./Wallpapers
