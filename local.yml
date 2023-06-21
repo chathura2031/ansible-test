@@ -236,6 +236,11 @@
         src: ./nitrogen
         dest: ~/.config/
 
+    - name: Configure chromium
+      copy:
+        src: ./Preferences
+        dest: ~/.var/app/com.github.Eloston.UngoogledChromium/config/chromium/Default/
+
     - name: Configure start menu
       become: true
       copy:
