@@ -119,6 +119,11 @@
         name: ulauncher
         state: latest
 
+    - name: Install arc theme
+      apt:
+        name: arc-theme
+        state: latest
+
     - name: Install flatpak (cross-distro package manager)
       apt:
         name: flatpak
