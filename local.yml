@@ -35,6 +35,11 @@
         name: obconf
         state: latest
 
+    - name: Install lxappearance (theme switcher)
+      apt:
+        name: lxappearance
+        state: latest
+
     - name: Install tint2 (panel manager)
       apt:
         name: tint2
@@ -256,3 +261,8 @@
     - name: Install vim in vscode
       shell:
         cmd: code --install-extension vscodevim.vim
+
+# TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
+# TODO: Add dunstrc to /etc/xdg/dunst/dunstrc
+# TODO: Install dunst from file until version is updated
+# TODO: Make dunst by running `make WAYLAND=0 && sudo make install WAYLAND=0` and install `make pkg-config libnotify-dev libxss-dev libglib2.0-dev libgdk-pixbuf2.0-dev libpangocairo-1.0-0 libxinerama-dev libxrandr-dev`

@@ -296,7 +296,7 @@
     <!-- Keybinding for brightness control -->
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>xbacklight -1</command>
+        <command>brightness_control dec</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Decrease screen brightness</name>
@@ -305,10 +305,10 @@
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>xbacklight +1</command>
+        <command>brightness_control</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>Decrease screen brightness</name>
+          <name>Increase screen brightness</name>
         </startupnotify>
       </action>
     </keybind>
