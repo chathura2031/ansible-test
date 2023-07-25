@@ -1,0 +1,34 @@
+#!/bin/bash
+# Reference: https://github.com/dunst-project/dunst
+
+is_installed() {
+    package=$1
+    cmd=$((dpkg -l $package | grep $package | cut -d " " -f3) 2>&1)
+    if [[ $cmd = " " ]]; then
+        res=0
+    else
+        res=1
+    fi
+}
+
+installed=()
+packages=(git make pkg-config libnotify-dev libxss-dev libglib2.0-dev libgdk-pixbuf2.0-dev libpangocairo-1.0-0 libxinerama-dev libxrandr-dev)
+for pkg in ${packages[@]}; do
+    is_installed $pkg
+    if [[ $res = 0 ]]; then
+        sudo apt install $pkg
+        installed+=($pkg)
+    fi
+done
+
+git clone https://github.com/dunst-project/dunst.git
+cd dunst/
+make WAYLAND=0
+sudo make install WAYLAND=0
+cd ../
+rm -vrf dunst/
+
+for pkg in ${installed[@]}; do
+    sudo apt remove --purge $pkg
+done
+sudo apt autoremove

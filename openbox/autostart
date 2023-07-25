@@ -21,4 +21,4 @@ tint2 &
 ulauncher &
 (sleep 0.5s && ulauncher-toggle)
 yakuake &
-# dunst -config /etc/xdg/dunst/dunstrc &
+# dunst -config /etc/dunst/dunstrc &
