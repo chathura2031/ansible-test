@@ -294,7 +294,7 @@
       become: true
       file:
         src: /opt/volume-control/volume_control
-        dest: /usr/local/bin
+        dest: /usr/local/bin/volume_control
         state: link
 
     - name: Configure brightness controller
@@ -307,7 +307,7 @@
       become: true
       file:
         src: /opt/brightness-control/brightness_control
-        dest: /usr/local/bin
+        dest: /usr/local/bin/brightness_control
         state: link
 
 # TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
