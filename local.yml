@@ -70,10 +70,10 @@
           #         name: libnotify
           #         state: latest
 
-    # - name: Install dunst (notification daemon/server)
-    #   apt:
-    #     name: dunst
-    #     state: latest
+    - name: Install dunst (notification daemon/server)
+      apt:
+        name: dunst
+        state: latest
 
     - name: Install xbacklight (brightness controller)
       apt:
@@ -224,7 +224,7 @@
     - name: Ensures the dunst folder exists
       become: true
       file:
-        path: /etc/dunst/
+        path: /etc/dunst
         state: directory
 
     - name: Configure dunst
@@ -233,6 +233,11 @@
         src: ./dunstrc
         dest: /etc/dunst/dunstrc
 
+    - name: Configure yakuake
+      copy:
+        src: ./yakuakerc
+        dest: ~/.config/
+      
     - name: Configure jgmenu
       copy:
         src: ./jgmenurc
@@ -267,7 +272,7 @@
         
     - name: Ensures the VSCode folder exists
       file:
-        path: ~/.config/Code/User/
+        path: ~/.config/Code/User
         state: directory
 
     - name: Configure vscode
@@ -278,5 +283,31 @@
     - name: Install vim in vscode
       shell:
         cmd: code --install-extension vscodevim.vim
+
+    - name: Configure volume controller
+      become: true
+      copy:
+        src: ./volume-control
+        dest: /opt/
+
+    - name: Create a symbolic link to the volume control file
+      become: true
+      file:
+        src: /opt/volume-control/volume_control
+        dest: /usr/local/bin
+        state: link
+
+    - name: Configure brightness controller
+      become: true
+      copy:
+        src: ./brightness-control
+        dest: /opt/
+
+    - name: Create a symbolic link to the brightness control file
+      become: true
+      file:
+        src: /opt/brightness-control/brightness_control
+        dest: /usr/local/bin
+        state: link
 
 # TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
