@@ -264,6 +264,11 @@
         src: ./start_menu
         dest: /usr/bin/
         mode: preserve
+        
+    - name: Ensures the VSCode folder exists
+      file:
+        path: ~/.config/Code/User/
+        state: directory
 
     - name: Configure vscode
       copy:
