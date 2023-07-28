@@ -221,6 +221,12 @@
         src: ./tint2rc
         dest: ~/.config/tint2/
 
+    - name: Ensures the dunst folder exists
+      become: true
+      file:
+        path: /etc/dunst/
+        state: directory
+
     - name: Configure dunst
       become: true
       copy:
