@@ -69,11 +69,12 @@
           #       apt:
           #         name: libnotify
           #         state: latest
-
-    - name: Install dunst (notification daemon/server)
-      apt:
-        name: dunst
-        state: latest
+    
+    # Dunst needs to be built manually
+    # - name: Install dunst (notification daemon/server)
+    #   apt:
+    #     name: dunst
+    #     state: latest
 
     - name: Install xbacklight (brightness controller)
       apt:
