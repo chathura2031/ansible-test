@@ -36,4 +36,4 @@ rm -vrf dunst/
 for pkg in ${installed[@]}; do
     sudo apt remove --purge -y $pkg
 done
-sudo apt autoremove
+sudo apt autoremove -y
