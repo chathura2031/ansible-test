@@ -65,10 +65,10 @@
         name: pavucontrol
         state: latest
 
-          #     - name: Install libnotify (notification library)
-          #       apt:
-          #         name: libnotify
-          #         state: latest
+    - name: Install libnotify (notification library)
+      apt:
+        name: libnotify-bin
+        state: latest
     
     # Dunst needs to be built manually
     # - name: Install dunst (notification daemon/server)
