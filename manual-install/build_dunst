@@ -12,7 +12,8 @@ is_installed() {
 }
 
 installed=()
-packages=(git make pkg-config libnotify-dev libxss-dev libglib2.0-dev libgdk-pixbuf2.0-dev libpangocairo-1.0-0 libxinerama-dev libxrandr-dev librust-pangocairo-dev)
+packages=(git make pkg-config libnotify-dev libxss-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxinerama-dev libxrandr-dev librust-pangocairo-dev)
+# packages=(git make pkg-config libnotify-dev libxss-dev libglib2.0-dev libgdk-pixbuf2.0-dev libpangocairo-1.0-0 libxinerama-dev libxrandr-dev librust-pangocairo-dev)
 icmd="sudo apt install -y"
 for pkg in ${packages[@]}; do
     is_installed $pkg
