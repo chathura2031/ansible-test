@@ -305,7 +305,7 @@
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>brightness_control</command>
+        <command>brightness_control inc</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Increase screen brightness</name>
