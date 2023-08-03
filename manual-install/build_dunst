@@ -4,7 +4,7 @@
 is_installed() {
     package=$1
     cmd=$((dpkg -l $package | grep $package | cut -d " " -f1) 2>&1)
-    if [[ $cmd = " " ]]; then
+    if [[ $cmd = "ii" ]]; then
         res=1
     else
         res=0
