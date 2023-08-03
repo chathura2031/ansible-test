@@ -264,6 +264,12 @@
         src: ./nitrogen
         dest: ~/.config/
 
+    - name: Configure sddm
+      become: true
+      copy:
+        src: ./sddm.conf
+        dest: /etc/
+
     - name: Configure chromium
       copy:
         src: ./Preferences
@@ -295,6 +301,7 @@
       copy:
         src: ./volume-control
         dest: /opt/
+        mode: preserve
 
     - name: Create a symbolic link to the volume control file
       become: true
@@ -308,6 +315,7 @@
       copy:
         src: ./brightness-control
         dest: /opt/
+        mode: preserve
 
     - name: Create a symbolic link to the brightness control file
       become: true
