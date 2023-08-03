@@ -55,6 +55,11 @@
         name: nitrogen
         state: latest
 
+    # - name: Install sddm (display manager)
+    #   apt:
+    #     name: sddm
+    #     state: latest
+
     - name: Install alsa-base (API for sound card device drivers)
       apt:
         name: alsa-base
