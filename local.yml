@@ -130,6 +130,11 @@
         name: ulauncher
         state: latest
 
+    - name: Install connamn (network manager)
+      apt:
+        name: connman-gtk
+        state: latest
+
     - name: Install arc theme
       apt:
         name: arc-theme
