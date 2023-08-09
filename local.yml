@@ -130,6 +130,11 @@
         name: ulauncher
         state: latest
 
+    - name: Install network manager (network manager)
+      apt:
+        name: network-manager
+        state: latest
+
     - name: Install arc theme
       apt:
         name: arc-theme
