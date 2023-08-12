@@ -130,10 +130,16 @@
         name: ulauncher
         state: latest
 
-    # - name: Install network manager (network manager)
-    #   apt:
-    #     name: network-manager
-    #     state: latest
+    - name: Remove netplan
+      apt:
+        name: netplan.io
+        state: absent
+        purge: true
+
+    - name: Install connman gui (network manager)
+      apt:
+        name: cmst
+        state: latest
 
     - name: Install arc theme
       apt:
@@ -258,6 +264,36 @@
       copy:
         src: ./ulauncher
         dest: ~/.config/
+
+    - name: Configure connman
+      systemd_service:
+        name: systemd-networkd.socket
+        enabled: false
+        state: stopped
+
+    - name: Configure connman
+      systemd_service:
+        name: systemd-networkd
+        enabled: false
+        state: stopped
+
+    - name: Configure connman
+      systemd_service:
+        name: networkd-dispatcher
+        enabled: false
+        state: stopped
+
+    - name: Configure connman
+      systemd_service:
+        name: systemd-networkd-wait-online
+        enabled: false
+        state: stopped
+
+    - name: Configure connman
+      systemd_service:
+        name: systemd-resolved.service
+        enabled: false
+        state: stopped
 
     - name: Transfer wallpapers
       copy:
