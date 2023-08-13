@@ -55,10 +55,10 @@
         name: nitrogen
         state: latest
 
-    # - name: Install sddm (display manager)
-    #   apt:
-    #     name: sddm
-    #     state: latest
+    - name: Install sddm (display manager)
+      apt:
+        name: sddm
+        state: latest
 
     - name: Install alsa-base (API for sound card device drivers)
       apt:
@@ -74,12 +74,6 @@
       apt:
         name: libnotify-bin
         state: latest
-    
-    # Dunst needs to be built manually
-    # - name: Install dunst (notification daemon/server)
-    #   apt:
-    #     name: dunst
-    #     state: latest
 
     - name: Install xbacklight (brightness controller)
       apt:
@@ -196,17 +190,6 @@
         name: podman
         state: latest
 
-    - name: Remove netplan
-      apt:
-        name: netplan.io
-        state: absent
-        purge: true
-
-    - name: Install connman gui (network manager)
-      apt:
-        name: cmst
-        state: latest
-
 - name: Configure packages
   hosts: localhost
   tasks:
@@ -264,36 +247,6 @@
       copy:
         src: ./ulauncher
         dest: ~/.config/
-
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: systemd-networkd.socket
-    #     enabled: false
-    #     state: stopped
-
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: systemd-networkd
-    #     enabled: false
-    #     state: stopped
-
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: networkd-dispatcher
-    #     enabled: false
-    #     state: stopped
-
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: systemd-networkd-wait-online
-    #     enabled: false
-    #     state: stopped
-
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: systemd-resolved.service
-    #     enabled: false
-    #     state: stopped
 
     - name: Transfer wallpapers
       copy:
@@ -364,5 +317,51 @@
         src: /opt/brightness-control/brightness_control
         dest: /usr/local/bin/brightness_control
         state: link
+
+- name: Setup networking
+  hosts: localhost
+  tasks:
+    - name: Remove netplan
+      become: true
+      apt:
+        name: netplan.io
+        state: absent
+        purge: true
+
+    - name: Install connman gui (network manager)
+      become: true
+      apt:
+        name: cmst
+        state: latest
+
+    # - name: Configure connman
+    #   ansible.builtin.systemd_service:
+    #     name: systemd-networkd.socket
+    #     enabled: false
+    #     state: stopped
+
+    # - name: Configure connman
+    #   ansible.builtin.systemd_service:
+    #     name: systemd-networkd
+    #     enabled: false
+    #     state: stopped
+
+    # - name: Configure connman
+    #   ansible.builtin.systemd_service:
+    #     name: networkd-dispatcher
+    #     enabled: false
+    #     state: stopped
+
+    # - name: Configure connman
+    #   ansible.builtin.systemd_service:
+    #     name: systemd-networkd-wait-online
+    #     enabled: false
+    #     state: stopped
+
+    # - name: Configure connman
+    #   ansible.builtin.systemd_service:
+    #     name: systemd-resolved.service
+    #     enabled: false
+    #     state: stopped
 
 # TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
