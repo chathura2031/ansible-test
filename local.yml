@@ -136,10 +136,10 @@
         state: absent
         purge: true
 
-    # - name: Install connman gui (network manager)
-    #   apt:
-    #     name: cmst
-    #     state: latest
+    - name: Install connman gui (network manager)
+      apt:
+        name: cmst
+        state: latest
 
     - name: Install arc theme
       apt:
@@ -272,7 +272,7 @@
         state: stopped
 
     - name: Configure connman
-      systemd_service:
+      ansible.builtin.systemd_service:
         name: systemd-networkd
         enabled: false
         state: stopped
