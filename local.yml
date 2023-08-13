@@ -266,7 +266,7 @@
         dest: ~/.config/
 
     - name: Configure connman
-      systemd_service:
+      ansible.builtin.systemd_service:
         name: systemd-networkd.socket
         enabled: false
         state: stopped
@@ -278,19 +278,19 @@
         state: stopped
 
     - name: Configure connman
-      systemd_service:
+      ansible.builtin.systemd_service:
         name: networkd-dispatcher
         enabled: false
         state: stopped
 
     - name: Configure connman
-      systemd_service:
+      ansible.builtin.systemd_service:
         name: systemd-networkd-wait-online
         enabled: false
         state: stopped
 
     - name: Configure connman
-      systemd_service:
+      ansible.builtin.systemd_service:
         name: systemd-resolved.service
         enabled: false
         state: stopped
