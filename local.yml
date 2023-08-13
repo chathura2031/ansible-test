@@ -130,17 +130,6 @@
         name: ulauncher
         state: latest
 
-    - name: Remove netplan
-      apt:
-        name: netplan.io
-        state: absent
-        purge: true
-
-    - name: Install connman gui (network manager)
-      apt:
-        name: cmst
-        state: latest
-
     - name: Install arc theme
       apt:
         name: arc-theme
@@ -205,6 +194,17 @@
     - name: Install podman
       apt:
         name: podman
+        state: latest
+
+    - name: Remove netplan
+      apt:
+        name: netplan.io
+        state: absent
+        purge: true
+
+    - name: Install connman gui (network manager)
+      apt:
+        name: cmst
         state: latest
 
 - name: Configure packages
