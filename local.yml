@@ -136,10 +136,10 @@
         state: absent
         purge: true
 
-    - name: Install connman gui (network manager)
-      apt:
-        name: cmst
-        state: latest
+    # - name: Install connman gui (network manager)
+    #   apt:
+    #     name: cmst
+    #     state: latest
 
     - name: Install arc theme
       apt:
