@@ -371,3 +371,4 @@
 # sudo apt install build-essential pkg-config libglib2.0-dev librust-pangocairo-dev libatk1.0-dev libgdk-pixbuf2.0-dev librust-gdk-sys-dev
 # git clone https://github.com/elkowar/eww && cd eww
 # cargo build --release --no-default-features --features x11
+# mkdir ~/.config/eww
