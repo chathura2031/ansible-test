@@ -320,50 +320,48 @@
         state: link
 
 - name: Setup networking
+  become: true
   hosts: localhost
   tasks:
     - name: Remove netplan
-      become: true
       apt:
         name: netplan.io
         state: absent
         purge: true
 
     - name: Install connman gui (network manager)
-      become: true
       apt:
         name: cmst
         state: latest
 
     - name: Configure connman
-      become: true
       ansible.builtin.systemd_service:
         name: systemd-networkd.socket
         enabled: false
         state: stopped
 
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: systemd-networkd
-    #     enabled: false
-    #     state: stopped
+    - name: Configure connman
+      ansible.builtin.systemd_service:
+        name: systemd-networkd
+        enabled: false
+        state: stopped
 
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: networkd-dispatcher
-    #     enabled: false
-    #     state: stopped
+    - name: Configure connman
+      ansible.builtin.systemd_service:
+        name: networkd-dispatcher
+        enabled: false
+        state: stopped
 
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: systemd-networkd-wait-online
-    #     enabled: false
-    #     state: stopped
+    - name: Configure connman
+      ansible.builtin.systemd_service:
+        name: systemd-networkd-wait-online
+        enabled: false
+        state: stopped
 
-    # - name: Configure connman
-    #   ansible.builtin.systemd_service:
-    #     name: systemd-resolved.service
-    #     enabled: false
-    #     state: stopped
+    - name: Configure connman
+      ansible.builtin.systemd_service:
+        name: systemd-resolved.service
+        enabled: false
+        state: stopped
 
 # TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
