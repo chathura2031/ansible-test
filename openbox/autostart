@@ -22,3 +22,4 @@ ulauncher &
 (sleep 0.5s && ulauncher-toggle)
 yakuake &
 dunst -config /etc/dunst/dunstrc &
+cmst -m &
