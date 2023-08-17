@@ -74,6 +74,9 @@ elif [[ $1 = "mute" ]]; then
     amixer set $device 0+ toggle
     get_icon
     notify
+elif [[ $1 = "get" ]]; then
+    get_volume
+    echo $volume
 else
     echo "UNKNOWN COMMAND"
     exit 1
