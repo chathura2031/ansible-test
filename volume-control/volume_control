@@ -75,7 +75,9 @@ elif [[ $1 = "mute" ]]; then
     get_icon
     notify
 elif [[ $1 = "get" ]]; then
+    get_device_status
     get_volume
+    echo $device_status
     echo $volume
 else
     echo "UNKNOWN COMMAND"
