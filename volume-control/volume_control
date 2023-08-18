@@ -77,8 +77,7 @@ elif [[ $1 = "mute" ]]; then
 elif [[ $1 = "get" ]]; then
     get_device_status
     get_volume
-    echo $device_status
-    echo $volume
+    echo '{"volume": "'$volume'", "status": "'$device_status'", "device": "'$device'"}'
 else
     echo "UNKNOWN COMMAND"
     exit 1
