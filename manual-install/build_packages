@@ -1,0 +1,47 @@
+#!/bin/bash
+# # Reference: https://github.com/dunst-project/dunst
+
+is_installed() {
+    package=$1
+    cmd=$((dpkg -l $package | grep $package | cut -d " " -f1) 2>&1)
+    if [[ $cmd = "ii" ]]; then
+        res=1
+    else
+        res=0
+    fi
+}
+
+# Combine all the build dependencies into an array
+packages=(dunst i3lock)
+tmp=()
+for pkg in ${packages[@]}; do
+    tmp+=($(bash $pkg prerequisites))
+done
+
+# Remove duplicates
+declare -A dependencies
+for dep in ${tmp[@]}; do
+    dependencies[$dep]=1
+done
+
+# Install any dependencies that aren't already installed
+installed=()
+icmd="sudo apt install -y"
+for dep in ${!dependencies[@]}; do
+    is_installed $dep
+    if [[ $res = 0 ]]; then
+        icmd="${icmd} ${dep}"
+        installed+=($dep)
+    fi
+done
+
+# Build the packages
+for pkg in ${packages[@]}; do
+    bash $pkg build
+done
+
+Remove dependencies that were not installed before
+for dep in ${installed[@]}; do
+    sudo apt remove --purge -y $pkg
+done
+sudo apt autoremove -y

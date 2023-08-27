@@ -1,0 +1,20 @@
+#!/bin/bash
+# Build instructions: https://elkowar.github.io/eww/eww.html
+
+prerequisites() {
+    # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    # source ~/.bashrc
+    echo "git build-essential pkg-config cargo libglib2.0-dev librust-pangocairo-dev libatk1.0-dev libgdk-pixbuf2.0-dev librust-gdk-sys-dev"
+}
+
+build() {
+    git clone https://github.com/elkowar/eww
+    cd eww/
+    cargo build --release --no-default-features --features x11
+    # mkdir ~/.config/eww
+    sudo mv -v target/release /opt/
+    cd ../
+    rm -vrf eww/
+}
+
+"$@"

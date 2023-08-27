@@ -1,5 +1,5 @@
 #!/bin/bash
 
 startx
-bash build_dunst
+bash build_packages
 bash setup_thunderbird
