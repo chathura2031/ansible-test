@@ -12,7 +12,8 @@ is_installed() {
 }
 
 # Combine all the build dependencies into an array
-packages=(dunst i3lock eww)
+# packages=(dunst i3lock eww)
+packages=(eww)
 tmp=()
 for pkg in ${packages[@]}; do
     tmp+=($(bash "$pkg"_config prerequisites))
@@ -31,8 +32,8 @@ icmd="sudo apt install -y"
 for dep in ${!dependencies[@]}; do
     is_installed $dep
     if [[ $res = 0 ]]; then
-	    echo "Installing $dep..."
-        icmd="${icmd} ${dep}"
+	echo "Installing $dep..."
+	eval "${icmd} ${dep}"
         installed+=($dep)
     fi
 done
