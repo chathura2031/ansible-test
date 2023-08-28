@@ -12,8 +12,7 @@ is_installed() {
 }
 
 # Combine all the build dependencies into an array
-# packages=(dunst i3lock eww)
-packages=(eww)
+packages=(dunst i3lock eww)
 tmp=()
 for pkg in ${packages[@]}; do
     tmp+=($(bash "$pkg"_config prerequisites))
