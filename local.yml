@@ -46,9 +46,9 @@
         name: tint2
         state: latest
 
-    - name: Install xcompmgr (compositor)
+    - name: Install picom (compositor)
       apt:
-        name: xcompmgr
+        name: picom
         state: latest
 
     - name: Install nitrogen (desktop background browser/setter)
