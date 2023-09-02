@@ -319,6 +319,13 @@
         dest: /usr/local/bin/brightness_control
         state: link
 
+    - name: Add the lockscreen script
+      become: true
+      copy:
+        src: ./lockscreen
+        dest: /usr/local/bin/
+        mode: preserve
+
 - name: Setup networking
   become: true
   hosts: localhost
@@ -363,6 +370,16 @@
         name: systemd-resolved.service
         enabled: false
         state: stopped
+
+- name: Finialise
+  hosts: localhost
+    - name: Get user confirmation to reboot
+      ansible.builtin.pause:
+        prompt: "Press enter to reboot system."
+
+    - name: Reboot system
+      ansible.builtin.reboot:
+        reboot_timeout: 10
 
 # TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
 # TODO: Install EWW:
