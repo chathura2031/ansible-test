@@ -373,6 +373,7 @@
 
 - name: Finialise
   hosts: localhost
+  tasks:
     - name: Get user confirmation to reboot
       ansible.builtin.pause:
         prompt: "Press enter to reboot system."
