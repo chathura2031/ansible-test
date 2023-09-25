@@ -156,6 +156,11 @@
       apt:
         deb: /tmp/code.deb
 
+    - name: Install dependency for i3locker (lockscreen)
+      apt:
+        name: libxcb-xrm-dev
+        state: latest
+
     - name: Install mpv (video player)
       apt:
         name: mpv
@@ -264,6 +269,12 @@
       copy:
         src: ./sddm.conf
         dest: /etc/
+
+    - name: Configure sddm
+      become: true
+      copy:
+        src: ./sddm-theme
+        dest: /usr/share/sddm/themes/
 
     - name: Configure chromium
       copy:
