@@ -382,17 +382,6 @@
         enabled: false
         state: stopped
 
-- name: Finialise
-  hosts: localhost
-  tasks:
-    - name: Get user confirmation to reboot
-      ansible.builtin.pause:
-        prompt: "Press enter to reboot system."
-
-    - name: Reboot system
-      ansible.builtin.reboot:
-        reboot_timeout: 10
-
 # TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
 # TODO: Install EWW:
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
