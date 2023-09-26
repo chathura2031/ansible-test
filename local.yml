@@ -210,6 +210,11 @@
         src: ./openbox
         dest: /etc/xdg/
 
+    - name: Configure lxappearance
+      copy:
+        src: ./gtk-3.0
+        dest: ~/.config/
+
     - name: Configure xbacklight
       become: true
       copy:
