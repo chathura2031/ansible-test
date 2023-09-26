@@ -267,7 +267,7 @@
     - name: Configure sddm
       become: true
       copy:
-        src: ./sddm.conf
+        src: ./sddm.config
         dest: /etc/
 
     - name: Configure sddm
