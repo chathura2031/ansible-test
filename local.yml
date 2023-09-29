@@ -264,11 +264,11 @@
         src: ./ulauncher
         dest: ~/.config/
 
-    - name: Transfer theme files
-      become: true
-      copy:
-        src: ./Arc-Dark
-        dest: /usr/share/themes/
+    # - name: Transfer theme files
+    #   become: true
+    #   copy:
+    #     src: ./Arc-Dark
+    #     dest: /usr/share/themes/
 
     - name: Transfer wallpapers
       copy:
