@@ -130,10 +130,10 @@
         name: ulauncher
         state: latest
 
-    # - name: Install arc theme
-    #   apt:
-    #     name: arc-theme
-    #     state: latest
+    - name: Install arc theme
+      apt:
+        name: arc-theme
+        state: latest
 
     - name: Install flatpak (cross-distro package manager)
       apt:
@@ -215,10 +215,10 @@
         src: ./openbox
         dest: /etc/xdg/
 
-    - name: Configure lxappearance
-      copy:
-        src: ./gtk-3.0
-        dest: ~/.config/
+    # - name: Configure lxappearance
+    #   copy:
+    #     src: ./gtk-3.0
+    #     dest: ~/.config/
 
     - name: Configure xbacklight
       become: true
@@ -264,11 +264,11 @@
         src: ./ulauncher
         dest: ~/.config/
 
-    # - name: Transfer theme files
-    #   become: true
-    #   copy:
-    #     src: ./Arc-Dark
-    #     dest: /usr/share/themes/
+    - name: Transfer theme files
+      become: true
+      copy:
+        src: ./Arc-Dark
+        dest: /usr/share/themes/
 
     - name: Transfer wallpapers
       copy:
