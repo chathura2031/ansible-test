@@ -130,14 +130,14 @@
         name: arc-theme
         state: latest
 
-    - name: Add repository for icon pack
-      apt_repository:
-        repo: ppa:snwh/ppa
+    # - name: Add repository for icon pack
+    #   apt_repository:
+    #     repo: ppa:snwh/ppa
 
-    - name: Install paper icon pack
-      apt:
-        name: paper-icon-theme
-        state: latest
+    # - name: Install paper icon pack
+    #   apt:
+    #     name: paper-icon-theme
+    #     state: latest
 
     - name: Install flatpak (cross-distro package manager)
       apt:
