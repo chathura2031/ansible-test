@@ -130,15 +130,6 @@
         name: arc-theme
         state: latest
 
-    # - name: Add repository for icon pack
-    #   apt_repository:
-    #     repo: ppa:snwh/ppa
-
-    # - name: Install paper icon pack
-    #   apt:
-    #     name: paper-icon-theme
-    #     state: latest
-
     - name: Install flatpak (cross-distro package manager)
       apt:
         name: flatpak
@@ -267,6 +258,12 @@
       copy:
         src: ./Wallpapers
         dest: ~/
+
+    - name: Transfer icon pack
+      become: true
+      copy:
+        src: ./Paper
+        dest: /usr/share/icons/
 
     - name: Configure nitrogen
       copy:
