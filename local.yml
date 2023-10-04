@@ -259,11 +259,16 @@
         src: ./Wallpapers
         dest: ~/
 
-    - name: Transfer icon pack
-      become: true
-      copy:
-        src: ./Paper
-        dest: /usr/share/icons/
+    # - name: Transfer icon pack
+    #   become: true
+    #   copy:
+    #     src: ./Paper
+    #     dest: /usr/share/icons/
+
+    # - name: Configure lxappearance
+    #   copy:
+    #     src: ./gtk-3.0
+    #     dest: ~/.config/
 
     - name: Configure nitrogen
       copy:
