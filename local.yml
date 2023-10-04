@@ -41,10 +41,10 @@
         name: lxappearance
         state: latest
 
-    - name: Install qt5ct (theme switcher)
-      apt:
-        name: qt5ct
-        state: latest
+    # - name: Install qt5ct (theme switcher)
+    #   apt:
+    #     name: qt5ct
+    #     state: latest
 
     - name: Install tint2 (panel manager)
       apt:
@@ -258,6 +258,12 @@
       copy:
         src: ./ulauncher
         dest: ~/.config/
+
+    - name: Transfer theme files
+      become: true
+      copy:
+        src: ./Arc-Dark
+        dest: /usr/share/themes/
 
     - name: Transfer wallpapers
       copy:
