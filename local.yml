@@ -41,6 +41,7 @@
         name: lxappearance
         state: latest
 
+    # This has been commented out as it breaks the Yakuake layout
     # - name: Install qt5ct (theme switcher)
     #   apt:
     #     name: qt5ct
@@ -405,10 +406,3 @@
         state: stopped
 
 # TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
-# TODO: Install EWW:
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# A lot of the packages below are also neede to build dunst so maybe do them together
-# sudo apt install build-essential pkg-config cargo libglib2.0-dev librust-pangocairo-dev libatk1.0-dev libgdk-pixbuf2.0-dev librust-gdk-sys-dev
-# git clone https://github.com/elkowar/eww && cd eww
-# cargo build --release --no-default-features --features x11
-# mkdir ~/.config/eww
