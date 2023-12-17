@@ -117,6 +117,11 @@
         name: thunar
         state: latest
 
+    - name: Install thunar archive plugin (archiving plugin for the file manager)
+      apt:
+        name: thunar-archive-plugin
+        state: latest
+
     - name: Install jgmenu (app menu)
       apt:
         name: jgmenu
@@ -151,6 +156,11 @@
     - name: Install chromium (browser)
       flatpak:
         name: com.github.Eloston.UngoogledChromium
+        state: present
+
+    - name: Install pick (colour picker)
+      flatpak:
+        name: org.kryogenix.Pick
         state: present
 
     - name: Download vscode package
@@ -200,6 +210,16 @@
     - name: Install podman
       apt:
         name: podman
+        state: latest
+
+    - name: Install gsimplecal (calendar applet)
+      apt:
+        name: gsimplecal
+        state: latest
+
+    - name: Install nomacs (image viewer)
+      apt:
+        name: nomacs
         state: latest
 
 - name: Configure packages
@@ -325,6 +345,11 @@
       shell:
         cmd: code --install-extension vscodevim.vim
 
+    - name: Configure gsimplecal
+      copy:
+        src: ./gsimplecal
+        dest: ~/.config/
+
     - name: Configure volume controller
       become: true
       copy:
@@ -405,4 +430,9 @@
         enabled: false
         state: stopped
 
-# TODO: Add `flatpak run com.github.Eloston.UngoogledChromium Chromium.Web.Store.crx`
+# TODO: Add `export PATH="/opt/anaconda3/bin:$PATH"` to .bashrc after installing anaconda at `/opt/anaconda3`
+# TODO: Run `xdg-mime default thunar.desktop inode/directory application/x-gnome-saved-search` to set thunar as the default file manager
+
+# TODO: Check if added
+# TODO: Add `sudo apt-get install thunar-archive-plugin` to add file extraction
+# TODO: Add `sudo apt install gsimplecal` as ansible instruction
