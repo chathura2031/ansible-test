@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Extract rider files and move it to the relevant location
+tar -xvf rider-2023.3.3.tar.gz
+sudo mkdir --parents /usr/share/jetbrains/
+sudo mv -v "JetBrains Rider-2023.3.3" /usr/share/jetbrains/rider-2023.3.3
+
+# Move the rider desktop file to the relevant location
+sudo cp -v jetbrains-rider.desktop /usr/share/applications/
