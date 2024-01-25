@@ -222,6 +222,11 @@
         name: nomacs
         state: latest
 
+    - name: Install resolvconf (dns resolver)
+      apt:
+        name: resolvconf
+        state: latest
+
 - name: Configure packages
   hosts: localhost
   tasks:
@@ -269,6 +274,10 @@
       copy:
         src: ./yakuakerc
         dest: ~/.config/
+      
+    - name: Configure thunar
+      shell:
+        cmd: xdg-mime default thunar.desktop inode/directory application/x-gnome-saved-search
       
     - name: Configure jgmenu
       copy:
@@ -434,5 +443,4 @@
 # TODO: Run `xdg-mime default thunar.desktop inode/directory application/x-gnome-saved-search` to set thunar as the default file manager
 
 # TODO: Check if added
-# TODO: Add `sudo apt-get install thunar-archive-plugin` to add file extraction
-# TODO: Add `sudo apt install gsimplecal` as ansible instruction
+# TODO: Add `sudo apt install resolvconf`
