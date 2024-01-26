@@ -1,6 +1,6 @@
 #!/bin/bash
 
-startx
+# startx
 bash build_packages
 bash setup_thunderbird
 bash setup_chrome
