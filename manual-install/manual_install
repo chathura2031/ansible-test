@@ -6,3 +6,4 @@ bash setup_thunderbird
 bash setup_chrome
 bash setup_pycharm
 bash setup_webstorm
+bash install_chrome_ext
