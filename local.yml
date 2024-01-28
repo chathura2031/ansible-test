@@ -445,3 +445,4 @@
 # TODO: Check if added
 # TODO: Add `sudo apt install resolvconf`
 # TODO: Backup Preferences file from chrome
+# TODO: Backup keyboard shortcuts, etc from Rider including Tools -> Web browsers (path: /var/lib/flatpak/exports/bin/com.github.Eloston.UngoogledChromium)
