@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Extract pycharm files and move it to the relevant location
-tar -xvf pycharm-professional-2023.2.3.tar.gz
-sudo mkdir --parents /usr/share/jetbrains/
-sudo mv -v pycharm-2023.2.3/ /usr/share/jetbrains/
-
-# Move the pycharm desktop file to the relevant location
-sudo cp -v jetbrains-pycharm.desktop /usr/share/applications/

@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Extract web storm files and move it to the relevant location
-tar -xvf webstorm-2023.2.5.tar.gz
-sudo mkdir --parents /usr/share/jetbrains/
-sudo mv -v WebStorm-232.10227.9 /usr/share/jetbrains/webstorm-2023.2.5
-
-# Move the web storm desktop file to the relevant location
-sudo cp -v jetbrains-webstorm.desktop /usr/share/applications/

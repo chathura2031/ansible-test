@@ -1,5 +1,0 @@
-#!/bin/bash
-# https://github.com/NeverDecaf/chromium-web-store
-# TODO: Set `chrome://flags/#extension-mime-request-handling` to always prompt for install
-extension_path="chrome-extensions/"
-flatpak run com.github.Eloston.UngoogledChromium "${extension_path}Chromium.Web.Store.crx auto-history-wipe.crx canvas-fingerprint-defender.crx privacy-badger.crx ublock.crx"
