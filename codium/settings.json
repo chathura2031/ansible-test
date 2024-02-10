@@ -1,0 +1,6 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "vim.vimrc.path": "/etc/vim/vimrc",
+    "vim.vimrc.enable": true,
+    "editor.lineNumbers": "relative"
+}
