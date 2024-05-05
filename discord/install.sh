@@ -1,4 +1,4 @@
 #!/bin/bash
 wget -O discord.deb "https://discord.com/api/download?platform=linux&format=deb"
-sudo apt install -y ./discord.deb
+sudo apt install -y --fix-broken ./discord.deb
 rm -v discord.deb
