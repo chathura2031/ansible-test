@@ -1,0 +1,32 @@
+{
+   "action": {
+   },
+   "background": {
+      "service_worker": "worker.js"
+   },
+   "commands": {
+      "_execute_action": {
+      }
+   },
+   "default_locale": "en",
+   "description": "__MSG_Description__",
+   "host_permissions": [ "https://app-how-to-use-it.com/*" ],
+   "icons": {
+      "128": "/data/icons/128.png",
+      "16": "/data/icons/16.png",
+      "256": "/data/icons/256.png",
+      "32": "/data/icons/32.png",
+      "48": "/data/icons/48.png",
+      "512": "/data/icons/512.png",
+      "64": "/data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjE2DygdhtxyTrQva2KkIcbmISTyTDnFg2X5OIVZnR38SrFJZ9copTiXF3e5f4MMzapmMO2ficoOPiTqqJTPKzIX4Ylaj8B38ZZ9ynmzRE3Ws8C7ojw6qgb2uhQVilwFDza4p+/wznzMnsPWKtzXiZqOk+TrGrX1rHDmTGO7DZya16Qw0+XVikT13cDj1o+53wTOiPYwSRucYe1Xva5HThtRHofEIb01hhvMmyUDSZdVglnyMZi39E8FacNVM/+XYx5g69L/KaLchnuZX0pFfgwcz8QXPLS689RWajwhWnd3/WDWq1gJtqVh1RoFzV+UZ9oFowMZ9Qk3zrbKnJuhNAQIDAQAB",
+   "manifest_version": 3,
+   "name": "Auto History Wipe",
+   "options_ui": {
+      "page": "/data/cleaning/index.html"
+   },
+   "permissions": [ "storage", "browsingData" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.3"
+}

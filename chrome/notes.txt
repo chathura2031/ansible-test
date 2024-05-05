@@ -1,0 +1,15 @@
+Settings:
+ - ./Preferences
+
+Extensions:
+ - ./Preferences
+  - extensions -> settings -> [extension_name]
+  - protection -> macs -> extensions -> [extension_name] (optional)
+ - ./Extensions
+ - ./Local Extension Settings
+ - ./Managed Extension Settings (not sure if required)
+
+New Profile:
+ - Local State
+  - profile -> info_cache -> [profile_name]
+  - profile -> profile_order -> [profile_name] (optional)

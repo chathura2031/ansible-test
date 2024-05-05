@@ -1,0 +1,95 @@
+:root {
+  --bg: whitesmoke;
+  --frn: #4d5156;
+  --border: rgba(0, 0, 0, 0.25);
+  --lght: #d5d5d5;
+}
+
+body {
+  font-size: 13px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--fnt);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 20px);
+}
+button {
+  color: #444;
+  background-image: linear-gradient(rgb(237, 237, 237), rgb(237, 237, 237) 38%, rgb(222, 222, 222));
+  box-shadow: rgba(0, 0, 0, 0.08) 0 1px 0, rgba(255, 255, 255, 0.75) 0 1px 2px inset;
+  text-shadow: rgb(240, 240, 240) 0 1px 0;
+  cursor: pointer;
+  border: solid 1px var(--border);
+  transition: 100ms;
+  padding: 5px;
+}
+button:active {
+  opacity: 0.5;
+}
+input[type=number] {
+  padding: 5px;
+  outline: none;
+  background-color: var(--lght);
+  border: none;
+  width: 60px;
+}
+input[type=number]:focus {
+  background-color: #72d9ff;
+}
+input[type=checkbox] {
+  padding: 0;
+}
+h1 {
+  background-color: var(--lght);
+  font-size: 120%;
+  padding: 5px;
+  font-weight: normal;
+  margin-top: 30px;
+}
+h1:first-child {
+  margin-top: 0;
+}
+p {
+  margin: 0;
+}
+#toolbar {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  padding: 10px 0;
+  margin: 0;
+  margin-top: 30px;
+  flex: 1;
+  align-items: end;
+}
+#toolbar label {
+  display: flex;
+  align-items: center;
+}
+#toolbar button {
+  white-space: nowrap;
+}
+#presets {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.note {
+  color: #547197;
+}
+.two {
+  display: inline-grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: 5px;
+  align-items: center;
+}
+.btn {
+  background-color: var(--lght);
+}
+
+[data-href] {
+  font-weight: bold;
+  text-decoration: none;
+}

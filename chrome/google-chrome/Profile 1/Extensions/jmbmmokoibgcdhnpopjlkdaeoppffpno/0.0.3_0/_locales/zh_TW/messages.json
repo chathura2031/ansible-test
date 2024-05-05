@@ -1,0 +1,23 @@
+{
+   "deletecache": {
+      "message": "Clear Cahche"
+   },
+   "deletecookies": {
+      "message": "Clear Cookies"
+   },
+   "deletedownloads": {
+      "message": "Clear Downloads"
+   },
+   "deleteformData": {
+      "message": "Clear FormData"
+   },
+   "deletehistory": {
+      "message": "Clear Histories"
+   },
+   "deletewhenclosed": {
+      "message": "Clear History When Start"
+   },
+   "description": {
+      "message": "Auto History Wipe - Auto History Cleaner 關閉或啟動chrome時刪除歷史記錄"
+   }
+}

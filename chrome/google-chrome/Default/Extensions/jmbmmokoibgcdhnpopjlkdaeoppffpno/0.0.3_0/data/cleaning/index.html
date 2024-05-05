@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auto History Wipe</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+  <body>
+    <h1 data-i18n="options_contexts"></h1>
+
+    <p class="two">
+      <input type="checkbox" id="unprotectedWeb" /><label
+        for="unprotectedWeb"
+        data-i18n="options_context_normal"
+      ></label>
+      <input type="checkbox" id="deletewhenclosed" /><label
+        for="deletewhenclosed"
+        data-i18n="deletewhenclosed"
+      ></label>
+
+      <input type="checkbox" id="deletecache" /><label
+        for="deletecache"
+        data-i18n="deletecache"
+      ></label>
+      <input type="checkbox" id="deletecookies" /><label
+        for="deletecookies"
+        data-i18n="deletecookies"
+      ></label>
+      <input type="checkbox" id="deletedownloads" /><label
+        for="deletedownloads"
+        data-i18n="deletedownloads"
+      ></label>
+      <input type="checkbox" id="deleteformData" /><label
+        for="deleteformData"
+        data-i18n="deleteformData"
+      ></label>
+      <input type="checkbox" id="deletehistory" /><label
+        for="deletehistory"
+        data-i18n="deletehistory"
+      ></label>
+    </p>
+    <h1 data-i18n="options_period"></h1>
+    <label
+      ><span data-i18n="options_since"></span>
+      <input type="number" id="since" min="0"
+    /></label>
+    <div id="presets">
+      <span data-i18n="options_presets"></span>
+    </div>
+
+    <div id="toolbar">
+      <div class="two">
+        <input type="checkbox" id="start" />
+      </div>
+
+      <button id="run"><b data-i18n="options_run"></b></button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+{
+   "deletecache": {
+      "message": "Clear Cahche"
+   },
+   "deletecookies": {
+      "message": "Clear Cookies"
+   },
+   "deletedownloads": {
+      "message": "Clear Downloads"
+   },
+   "deleteformData": {
+      "message": "Clear FormData"
+   },
+   "deletehistory": {
+      "message": "Clear Histories"
+   },
+   "deletewhenclosed": {
+      "message": "Clear History When Start"
+   },
+   "description": {
+      "message": "Auto History Wipe - Auto History Cleaner delete history when closing or starting chrome  "
+   },
+   "options_be_careful": {
+      "message": "be careful!"
+   },
+   "options_be_really_careful": {
+      "message": "be really careful!"
+   },
+   "options_context_extension": {
+      "message": "Extensions and packaged applications a user has installed"
+   },
+   "options_context_hosted": {
+      "message": "Websites that have been installed as hosted applications"
+   },
+   "options_context_normal": {
+      "message": "Normal websites"
+   },
+   "options_no_window": {
+      "message": "Run cleaning without opening this window (when action button is clicked)"
+   },
+   "options_period": {
+      "message": "How Long to Clean"
+   },
+   "options_presets": {
+      "message": "Presets:"
+   },
+   "options_run": {
+      "message": "Run Cleaning"
+   },
+   "options_since": {
+      "message": "Clear the most recent histories since (in days)"
+   }
+}
