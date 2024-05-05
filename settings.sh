@@ -1,9 +1,12 @@
 # Set scrolling direction
 # gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 
-# Set yakuake as the default terminal
+# Set yakuake as the default terminal for gnome
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/yakuake
 gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
+
+# Set yakuake as the default terminal for cinnamon
+gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/yakuake
 
 # sudo apt remove gnome-terminal
 # sudo apt autoremove
