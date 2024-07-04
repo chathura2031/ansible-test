@@ -23,8 +23,8 @@ echo "[Desktop Entry]" >> $desktop_file
 echo "Version=1.0" >> $desktop_file
 echo "Type=Application" >> $desktop_file
 echo "Name=JetBrains Rider" >> $desktop_file
-echo "Icon=/usr/share/jetbrains/$program_folder_name/bin/pycharm.svg" >> $desktop_file
-echo "Exec="/usr/share/jetbrains/$program_folder_name/bin/pycharm.sh" %f" >> $desktop_file
+echo "Icon=/usr/share/jetbrains/$program_folder_name/bin/rider.svg" >> $desktop_file
+echo "Exec="/usr/share/jetbrains/$program_folder_name/bin/rider.sh" %f" >> $desktop_file
 echo "Comment=A corss-platform IDE for .NET" >> $desktop_file
 echo "Categories=Development;IDE;" >> $desktop_file
 echo "Terminal=false" >> $desktop_file
