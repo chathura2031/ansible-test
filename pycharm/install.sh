@@ -3,6 +3,7 @@ program_name=pycharm
 version=2024.1.3
 folder_name=$program_name-professional-$version
 file_name=$folder_name.tar.gz
+desktop_file=jetbrains-$program_name.desktop
 
 # Get the program files
 wget https://download-cdn.jetbrains.com/python/$file_name
@@ -16,7 +17,6 @@ sudo mv -v $program_name-$version/ /usr/share/jetbrains/
 rm -v $file_name
 
 # Generate the desktop file
-desktop_file=jetbrains-$program_name.desktop
 rm -v $desktop_file
 echo "[Desktop Entry]" >> $desktop_file
 echo "Version=1.0" >> $desktop_file
@@ -31,4 +31,4 @@ echo "StartupWMClass=jetbrains-pycharm" >> $desktop_file
 echo "StartupNotify=true" >> $desktop_file
 
 # Move the desktop file to the relevant folder
-sudo cp -v $desktop_file /usr/share/applications/
+sudo mv -v $desktop_file /usr/share/applications/
