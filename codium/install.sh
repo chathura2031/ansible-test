@@ -1,4 +1,6 @@
 #!/bin/bash
+# Update existing packages
+../pre-install.sh
 
 # Install codium
 # sudo snap install codium --classic

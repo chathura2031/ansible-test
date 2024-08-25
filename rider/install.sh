@@ -1,4 +1,15 @@
 #!/bin/bash
+wd=$(pwd)
+
+# Update existing packages
+../pre-install.sh
+
+# Install vim
+cd ../vim/
+./install.sh
+cd $wd
+
+# Install rider
 version=2024.1.4
 tar_file_name=JetBrains.Rider-$version
 extracted_folder_name="JetBrains Rider-$version"

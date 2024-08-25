@@ -1,4 +1,15 @@
 #!/bin/bash
+wd=$(pwd)
+
+# Update existing packages
+../pre-install.sh
+
+# Install vim
+cd ../vim/
+./install.sh
+cd $wd
+
+# Install pycharm
 program_name=pycharm
 version=2024.1.3
 folder_name=$program_name-professional-$version
